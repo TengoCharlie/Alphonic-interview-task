@@ -23,7 +23,6 @@ MongoClient.connect(
     router.post("/addProduct", async (req, res) => {
       await productDB.insertOne(req.body, (err, result) => {
         if (err) return console.log(err);
-        console.log("save to db");
         res.send(result.ops[0]);
       });
     });
@@ -61,7 +60,6 @@ MongoClient.connect(
     // update data in DATABASE
     router.post("/updateProduct/:id", async (req, res) => {
       const id = req.params.id;
-      console.log(id);
       if (!ObjectId.isValid(id))
         return res.status(422).send({ error: "Invalid ObjectId" });
 

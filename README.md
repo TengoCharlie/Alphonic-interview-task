@@ -24,3 +24,26 @@
    4. `\_id`
 
 You need to create the POSTMAN collection so that it can be published for the front-end developers
+
+# Solution
+
+- `[POST] /api/v1/addProduct` = For adding data to collection.
+- `[GET] /api/v1/getProduct?id=<id of product>` = For getting data for a particular id by using id as a query in URL.
+- `[GET] /api/v1/getProducts` = For Getting all the data in the collection.
+- `[POST] /api/v1/updateProduct/:id` = For updating data in collection , you have to pass `ObjectId` as a parameter.
+
+## For run it on Development server
+
+- Run `npm install`
+- Then Run `npm run dev`
+
+### it will run on PORT 3000
+
+### it uses local MongoDB server for Database
+
+## For run it on Production server
+
+- Run `npm install`
+- Then Run `npm start`
+
+#### you have to change `MONGO_URL` and `PORT` in _.env_ file
