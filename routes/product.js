@@ -1,14 +1,17 @@
+// Import Packages
 const router = require("express").Router();
-const { MongoClient, ObjectId } = require("mongodb");
-
 require("dotenv").config();
 
+// Import MogoDB package
+const { MongoClient, ObjectId } = require("mongodb");
+
 // Create new MongoClient
-const dbName = "myDb";
+const dbName = "myDb"; //name of database
 
 MongoClient.connect(
-  process.env.MONGO_URL,
+  process.env.MONGO_URL, //Connection URL
   {
+    //To prevent deprecation Warnings
     useUnifiedTopology: true,
     useNewUrlParser: true,
   },
@@ -21,6 +24,7 @@ MongoClient.connect(
     // =================================================================================
     // Add product to DB
     router.post("/addProduct", async (req, res) => {
+      // Insert Data to DB
       await productDB.insertOne(req.body, (err, result) => {
         if (err) return console.log(err);
         res.send(result.ops[0]);
@@ -31,12 +35,14 @@ MongoClient.connect(
     // Get product By ID
     router.get("/getProduct", async (req, res) => {
       const query = req.query.id;
+      // validate the query string, that is it available and Correct
       if (!query)
         return res.status(400).send({ error: "Please specify an Id" });
 
       if (!ObjectId.isValid(query))
         return res.status(422).send({ error: "Invalid ObjectId" });
 
+      // Find the DB accroding to ID
       await productDB.findOne(ObjectId(query), (err, result) => {
         if (err) return console.log(err);
         if (!result)
@@ -48,6 +54,7 @@ MongoClient.connect(
     // =================================================================================
     // Get all the products
     router.get("/getProducts", async (req, res) => {
+      //get all the data from collection or DB
       await productDB.find({}).toArray((err, result) => {
         if (err) return console.log(err);
         if (result.length === 0)
@@ -60,9 +67,11 @@ MongoClient.connect(
     // update data in DATABASE
     router.post("/updateProduct/:id", async (req, res) => {
       const id = req.params.id;
+      // validate the ID
       if (!ObjectId.isValid(id))
         return res.status(422).send({ error: "Invalid ObjectId" });
 
+      // find the data and then update it and then return the data than find by id
       await productDB.findOneAndUpdate(
         { _id: ObjectId(id) },
         { $set: req.body },

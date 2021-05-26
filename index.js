@@ -3,13 +3,13 @@ const express = require("express");
 app = express();
 app.use(express.json());
 
-// // Enviornment Variable setup
+// Enviornment Variable setup
 require("dotenv").config();
 
-// // import router file
+// import router file
 const productRouter = require("./routes/product");
 
-// // define PORT
+// define PORT
 const PORT = process.env.PORT || 3000;
 
 // Routes
