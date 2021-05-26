@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#this file is to semi-automate the commit and push to git and github
+
 addFileDefault="."
 addFileDefaultTemp=""
 commitMessage="My First Commit"
