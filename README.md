@@ -34,7 +34,7 @@ You need to create the POSTMAN collection so that it can be published for the fr
 
 ## For run it on Development server
 
-- Run `npm install`
+- Run `npm install` - to install all the dependencies
 - Then Run `npm run dev`
 
 ### it will run on PORT 3000
@@ -43,7 +43,7 @@ You need to create the POSTMAN collection so that it can be published for the fr
 
 ## For run it on Production server
 
-- Run `npm install`
+- Run `npm install` - to install all the dependencies
 - Then Run `npm start`
 
 #### you have to change `MONGO_URL` and `PORT` in _.env_ file
