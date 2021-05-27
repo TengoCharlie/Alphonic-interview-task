@@ -27,6 +27,8 @@ You need to create the POSTMAN collection so that it can be published for the fr
 
 # Solution
 
+## API documentation for Front End Developers [DOCS](https://documenter.getpostman.com/view/15198037/TzXxid2J#18aa3587-5cf2-49eb-8e04-b5b609fc1a7a)
+
 - `[POST] /api/v1/addProduct` = For adding data to collection.
 - `[GET] /api/v1/getProduct?id=<id of product>` = For getting data for a particular id by using id as a query in URL.
 - `[GET] /api/v1/getProducts` = For Getting all the data in the collection.
