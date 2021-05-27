@@ -46,7 +46,7 @@ MongoClient.connect(
       await productDB.findOne(ObjectId(query), (err, result) => {
         if (err) return console.log(err);
         if (!result)
-          return res.send({ error: "No data Avialable with the Id" });
+          return res.status(404).send({ error: "No data Avialable with the Id" });
         res.send(result);
       });
     });
