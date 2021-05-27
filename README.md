@@ -1,3 +1,7 @@
+# API link [http://productapi.tenguriya.com/](http://productapi.tenguriya.com/)
+## API documentation for Front End Developers [DOCS](https://documenter.getpostman.com/view/15198037/TzXxid2J#18aa3587-5cf2-49eb-8e04-b5b609fc1a7a)
+
+
 # Alphonic-interview-task
 
 ### You have to create a Node ExpressJS API and test it using the Postman tool.
@@ -27,7 +31,6 @@ You need to create the POSTMAN collection so that it can be published for the fr
 
 # Solution
 
-## API documentation for Front End Developers [DOCS](https://documenter.getpostman.com/view/15198037/TzXxid2J#18aa3587-5cf2-49eb-8e04-b5b609fc1a7a)
 
 - `[POST] /api/v1/addProduct` = For adding data to collection.
 - `[GET] /api/v1/getProduct?id=<id of product>` = For getting data for a particular id by using id as a query in URL.
@@ -51,4 +54,3 @@ You need to create the POSTMAN collection so that it can be published for the fr
 #### you have to change `MONGO_URL` and `PORT` in _.env_ file
 
 
-PMAK-60af4cd9f0c1ef0035ee3ed4-15c8f511409f78c4fd3671b15cb415ff37
