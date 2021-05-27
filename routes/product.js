@@ -58,7 +58,7 @@ MongoClient.connect(
       await productDB.find({}).toArray((err, result) => {
         if (err) return console.log(err);
         if (result.length === 0)
-          return res.send({ message: "Database is empty" });
+          return res.status(404).send({ message: "Database is empty" });
         res.send(result);
       });
     });
@@ -81,7 +81,7 @@ MongoClient.connect(
               .status(422)
               .send({ error: "Fields for updates are Empty" });
           if (result.value === null)
-            return res.send({
+            return res.status(404).send({
               message: "No data Available with the Id",
             });
           res.send(result.value);
