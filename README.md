@@ -1,5 +1,5 @@
 # API link [http://productapi.tenguriya.com/](http://productapi.tenguriya.com/)
-## API documentation for Front End Developers [DOCS](https://documenter.getpostman.com/view/15198037/TzXxid2J#18aa3587-5cf2-49eb-8e04-b5b609fc1a7a)
+## API documentation for Front End Developers [DOCS](https://documenter.getpostman.com/view/15198037/TzXxix8D)
 
 
 # Alphonic-interview-task
